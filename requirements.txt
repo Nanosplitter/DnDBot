@@ -1,0 +1,16 @@
+aiohttp
+apscheduler
+asyncio
+discord
+discord.py[voice]
+pyyaml
+aiofiles
+schedule
+sklearn
+pandas
+nltk
+numpy
+trafilatura
+inspiro
+uwuify
+RateMyProfessorsAPI
