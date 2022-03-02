@@ -1,6 +1,10 @@
 bot_prefix: "PREFIX"
 token: "BOT_TOKEN"
 application_id: "APPLICATION_ID"
+dbhost: "DATABASE_HOSTENAME"
+dbuser: "DATABASE_USERNAME"
+dbpassword: "DATABASE_PASSWORD"
+databasename: "DATABASE_NAME"
 owners:
   - OWNER_ID
 blacklist:

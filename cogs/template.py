@@ -2,10 +2,11 @@ import os
 import sys
 
 import yaml
-from discord.ext import commands
+from nextcord.ext import commands
 
-if "CompsciBot" not in str(os.getcwd()):
-    os.chdir("./CompsciBot")
+# Only if you want to use variables that are in the config.yaml file.
+if "DaddyBot" not in str(os.getcwd()):
+    os.chdir("./DaddyBot")
 with open("config.yaml") as file:
     config = yaml.load(file, Loader=yaml.FullLoader)
 
@@ -18,7 +19,7 @@ class Template(commands.Cog, name="template"):
     @commands.command(name="testcommand")
     async def testcommand(self, context):
         """
-        [No arguments] This is a testing command that does nothing.
+        This is a testing command that does nothing.
         """
         await context.send("I'll tell you when you're older. Move along now, child.")
 

@@ -1,31 +1,33 @@
 import os
 import sys
 
-import discord
+import nextcord
 import yaml
-from discord.ext import commands
+from nextcord.ext import commands
 
-if "CompsciBot" not in str(os.getcwd()):
-    os.chdir("./CompsciBot")
+if "DaddyBot" not in str(os.getcwd()):
+    os.chdir("./DaddyBot")
 with open("config.yaml") as file:
     config = yaml.load(file, Loader=yaml.FullLoader)
 
-class Help(commands.Cog, name="help"):
+
+class Help(commands.Cog, name="helpmedaddy"):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name="help")
-    async def help(self, context):
+    @commands.command(name="helpmedaddy")
+    async def helpmedaddy(self, context):
         """
-        [No arguments] List all commands from every Cog the bot has loaded.
+        List all commands from every Cog the bot has loaded.
         """
         prefix = config["bot_prefix"]
         if not isinstance(prefix, str):
             prefix = prefix[0]
-        embed = discord.Embed(title="Help", description="List of available commands:", color=config["success"])
+        embed = nextcord.Embed(title="Help", description="List of available commands:", color=config["success"])
         for i in self.bot.cogs:
             cog = self.bot.get_cog(i.lower())
-            if i not in ["owner", "template", "moderation"]:
+            print(i)
+            if i not in ["owner", "template"]:
                 commands = cog.get_commands()
                 command_list = [command.name for command in commands]
                 command_description = [command.help for command in commands]
