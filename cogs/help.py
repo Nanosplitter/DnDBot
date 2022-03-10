@@ -5,8 +5,8 @@ import nextcord
 import yaml
 from nextcord.ext import commands
 
-if "DaddyBot" not in str(os.getcwd()):
-    os.chdir("./DaddyBot")
+if "DnDBot" not in str(os.getcwd()):
+    os.chdir("./DnDBot")
 with open("config.yaml") as file:
     config = yaml.load(file, Loader=yaml.FullLoader)
 

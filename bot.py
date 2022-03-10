@@ -9,7 +9,7 @@ import yaml
 from nextcord.ext import commands, tasks
 from nextcord.ext.commands import Bot
 
-if "DaddyBot" not in str(os.getcwd()):
+if "DnDBot" not in str(os.getcwd()):
     os.chdir("./DnDBot")
 with open("config.yaml") as file:
     config = yaml.load(file, Loader=yaml.FullLoader)
@@ -100,6 +100,6 @@ async def on_command_error(context, error):
             color=config["error"]
         )
         await context.send(embed=embed)
-
+    raise error
 # Run the bot with the token
 bot.run(config["token"])
